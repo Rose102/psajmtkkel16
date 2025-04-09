@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Pixelify+Sans:wght@400..700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: "Pixelify Sans", serif;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../Assets/suboption.png');
+    background-size: contain;
+    z-index: -1;
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 80px; /* Mengurangi lebar menjadi 20px */
+    height: 80px; /* Mengurangi tinggi menjadi 20px */
+    border: none;
+    cursor: pointer;
+    background-color: transparent; /* Mengatur latar belakang menjadi transparan */
+    transition: transform 0.3s ease; /* Menambahkan transisi */
+}
+
+.back-button img {
+    max-width: 100%; /* Mengatur maksimal lebar gambar */
+    max-height: 100%; /* Mengatur maksimal tinggi gambar */
+    object-fit: contain; /* Menyimpan rasio aspek gambar */
+    transition: transform 0.3s ease; /* Menambahkan transisi */
+}
+
+.back-button:hover {
+    transform: scale(1.1); /* Mengubah ukuran tombol saat hover */
+}
+
+.title {
+    position: absolute;
+    top: 15px;
+    left: 100px;
+    color: #ffcc00;
+    text-align: center;
+    font-size: 36px;
+}
+
+.layang-layang-images {
+    display: flex;
+    justify-content: center;
+    margin-top: 250px;
+    transition: transform 0.3s ease; /* Menambahkan transisi */
+}
+
+.layang-layang-images:hover {
+    transform: scale(1.1); /* Mengubah ukuran elemen saat hover */
+}
+
+.layang-image {
+    width: 150px;
+    height: 150px;
+    margin: 0 20px;
+    transition: transform 0.3s ease; /* Menambahkan transisi */
+}
+
+.layang-image:hover {
+    transform: scale(1.1); /* Mengubah ukuran elemen saat hover */
+}
+
+.cat-image {
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    width: 150px; /* Sesuaikan ukuran sesuai kebutuhan */
+    height: 150px; /* Sesuaikan ukuran sesuai kebutuhan */
+}
+
+.option-buttons {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.option-button {
+    width: 30%;
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layang-layang Options</title>
+    <link rel="stylesheet" href="LayangOptionStyle.css">
+</head>
+<body>
+    <!-- Background Image -->
+    <div class="background-image"></div>
+
+    <!-- Back Button -->
+    <button class="back-button" onclick="goBackToOption()">
+        <img src="../../Assets/Back.png" alt="Back Button">
+    </button>
+
+    <!-- Title -->
+    <h1 class="title">Layang-layang</h1>
+
+    <!-- Persegi Images -->
+    <div class="layang-layang-images">
+        <img src="../../Assets/sipatlayang.png" alt="Jajar 1" class="layang-image" onclick="redirectToSifatLayang()">
+        <img src="../../Assets/KLlayang.png" alt="Jajar 2" class="layang-image" onclick="redirectToKelilingLuasLayang()">
+        <img src="../../Assets/Quizlayang.png" alt="Jajar 3" class="layang-image" onclick="redirectToQuizLayang()">
+    </div>
+
+    <!-- Cat Image -->
+    <img src="../../Assets/kucingnengok.png" alt="Cat" class="cat-image">
+
+    <script>
+        function goBackToOption() {
+            window.location.href = "../../Homepage/Option.html";
+        }
+
+        function redirectToSifatLayang() {
+            window.location.href = "SifatLayang.html";
+        }
+
+        function redirectToKelilingLuasLayang() {
+            window.location.href = "Keliling&LuasLayang.html";
+        }
+
+        function redirectToQuizLayang() {
+            window.location.href = "../QuizLayanglayang.html";
+        }
+    </script>
+
+</body>
+</html>

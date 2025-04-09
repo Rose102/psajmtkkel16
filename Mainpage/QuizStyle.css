@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Pixelify+Sans:wght@400..700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: "Pixelify Sans", serif;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../Assets/suboption.png');
+    background-size: contain;
+    z-index: -1;
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 80px; /* Mengurangi lebar menjadi 20px */
+    height: 80px; /* Mengurangi tinggi menjadi 20px */
+    border: none;
+    cursor: pointer;
+    background-color: transparent; /* Mengatur latar belakang menjadi transparan */
+    transition: transform 0.3s ease; /* Menambahkan transisi */
+}
+
+.back-button img {
+    max-width: 100%; /* Mengatur maksimal lebar gambar */
+    max-height: 100%; /* Mengatur maksimal tinggi gambar */
+    object-fit: contain; /* Menyimpan rasio aspek gambar */
+    transition: transform 0.3s ease; /* Menambahkan transisi */
+}
+
+.back-button:hover {
+    transform: scale(1.1); /* Mengubah ukuran tombol saat hover */
+}
+
+.title {
+    position: absolute;
+    top: 15px;
+    left: 110px;
+    color: #ffcc00;
+    text-align: center;
+    font-size: 36px;
+}
+
+.quiz-container {
+    justify-content: center;
+    justify-items: center;
+    position: absolute;
+    top: 110px;
+    left: 190px;
+    height: 60%;
+    width: 65%;
+    max-width: 900px;
+    background-color: #FFFFFF;
+    border: 30px solid #ffcc00;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.question-box {
+    margin-left: 15px;
+    margin-bottom: 80px;
+}
+
+#question {
+    font-size: 24px;
+    color: #67130C;
+}
+
+.answer-options {
+    justify-content: center;
+    display: flex;
+    position: absolute;
+    top: 150px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    
+}
+
+.answer-option {
+    width: 25%;
+    height: 100px;
+    margin: 10px;
+    background-color: #FFC03F;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: "Pixelify Sans", serif;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.answer-option:hover {
+    transform: scale(1.1);
+    background-color: #67130C; /* Warna berubah saat hover */
+    color: #FFFFFF;
+}
+
+.progress-bar {
+    justify-content: center;
+    justify-self: center;
+    text-align: center;
+    margin-top: 20px;
+    height: 10px;
+    width: 80%;
+    background-color: #ccc;
+    border-radius: 5px;
+    position: absolute;
+    top: 360px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.result-content {
+    text-align: center;
+    width: 75%;
+}
+
+.result-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.retry-button, .home-button {
+    width: 150px;
+    height: 100px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+
+.retry-button:hover, .home-button:hover {
+    transform: scale(1.1);
+}
+
+.cat-image {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    width: 150px;
+}
+
+.progress-bar {
+    margin-top: 20px;
+    height: 10px;
+    background-color: #ccc; /* Warna latar belakang progress bar */
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#progress {
+    width: 20%; /* Lebar awal progress bar */
+    height: 100%;
+    background-color: #67130C; /* Warna progress bar */
+}

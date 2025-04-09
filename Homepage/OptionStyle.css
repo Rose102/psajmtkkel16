@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Pixelify+Sans:wght@400..700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: "Pixelify Sans", serif;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../Assets/optionbg.png');
+    background-size: cover;
+    z-index: -1;
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 80px; /* Mengurangi lebar menjadi 20px */
+    height: 80px; /* Mengurangi tinggi menjadi 20px */
+    border: none;
+    cursor: pointer;
+    background-color: transparent; /* Mengatur latar belakang menjadi transparan */
+    transition: transform 0.3s ease; /* Menambahkan transisi */
+}
+
+.back-button img {
+    max-width: 100%; /* Mengatur maksimal lebar gambar */
+    max-height: 100%; /* Mengatur maksimal tinggi gambar */
+    object-fit: contain; /* Menyimpan rasio aspek gambar */
+    transition: transform 0.3s ease; /* Menambahkan transisi */
+}
+
+.back-button:hover {
+    transform: scale(1.1); /* Mengubah ukuran tombol saat hover */
+}
+
+.cat-image {
+    position: absolute;
+    top: 50px;
+    left: 700px;
+    width: 100px;
+    top: 10px;
+}
+
+.question-box {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffcc00;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #333;
+    font-size: 24px;
+}
+
+.shape-buttons-top,
+.shape-buttons-bottom {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Membuat 4 kolom */
+    grid-auto-rows: minmax(1px, auto); /* Mengatur tinggi baris minimal 10px */
+    justify-content: center;
+}
+
+.shape-buttons-top {
+    margin-top: 200px;
+    margin-left: 300px; /* Menambahkan margin kiri untuk menggeser ke kanan */
+}
+
+.shape-buttons-bottom {
+    margin-top: 0.5px; /* Jarak antara bagian atas dan bawah */
+    margin-left: 100px; /* Menambahkan margin kiri untuk menggeser ke kanan */
+}
+
+.shape-button {
+    width: 70%; /* Mengambil 70% lebar kolom */
+    height: 70%; /* Mengambil 70% tinggi baris */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease; /* Menambahkan transisi */
+}
+
+.shape-button img {
+    max-width: 100%; /* Mengatur maksimal lebar gambar */
+    max-height: 100%; /* Mengatur maksimal tinggi gambar */
+    object-fit: contain; /* Menyimpan rasio aspek gambar */
+}
+
+.shape-button:hover {
+    transform: scale(1.1); /* Mengubah ukuran tombol saat hover */
+}
+/* Mengatur posisi tombol ke dalam grid */
+.persegi { grid-column: 1; grid-row: 1; }
+.persegipanjang { grid-column: 2; grid-row: 1; }
+.trapesium { grid-column: 3; grid-row: 1; }
+.jajargenjang { grid-column: 1; grid-row: 2; }
+.lingkaran { grid-column: 2; grid-row: 2; }
+.belahketupat { grid-column: 3; grid-row: 2; }
+.layang { grid-column: 4; grid-row: 2; }

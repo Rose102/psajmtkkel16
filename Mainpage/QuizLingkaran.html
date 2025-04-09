@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Lingkaran</title>
+    <link rel="stylesheet" href="QuizStyle.css">
+</head>
+<body>
+    <!-- Background Image -->
+    <div class="background-image"></div>
+
+    <!-- Back Button -->
+    <button class="back-button" onclick="goToLingkaranOption()">
+        <img src="../Assets/Back.png" alt="Back Button">
+    </button>
+
+    <!-- Title -->
+    <h1 class="title">Lingkaran</h1>
+
+    <!-- Quiz Container -->
+    <div class="quiz-container">
+        <div class="quiz-content">
+            <div class="question-box">
+                <p id="question">Manakah di antara pernyataan berikut yang merupakan sifat dari lingkaran?</p>
+            </div>
+            <div class="answer-options">
+                <button class="answer-option" onclick="checkAnswer(0)">Memiliki empat sisi sama panjang</button>
+                <button class="answer-option" onclick="checkAnswer(1)">Semua titik pada lingkaran berjarak sama dari pusat</button>
+                <button class="answer-option" onclick="checkAnswer(2)">Memiliki dua diagonal yang sama panjang</button>
+            </div>
+            <div class="progress-bar">
+                <div id="progress" style="width: 20%;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cat Image -->
+    <img src="../Assets/kucingnengok.png" alt="Cat" class="cat-image">
+
+    <script>
+        let currentQuestion = 0;
+        let score = 0;
+        const questions = [
+            {
+                question: "Manakah di antara pernyataan berikut yang merupakan sifat dari lingkaran?",
+                options: ["Memiliki empat sisi sama panjang", "Semua titik pada lingkaran berjarak sama dari pusat", "Memiliki dua diagonal yang sama panjang"],
+                correctAnswer: 1
+            },
+            {
+                question: "Sebuah lingkaran memiliki jari-jari 7 cm. Berapakah kelilingnya?",
+                options: ["44 cm", "66 cm", "88 cm"],
+                correctAnswer: 0
+            },
+            {
+                question: "Sebuah lingkaran memiliki jari-jari 10 cm. Berapakah luasnya?",
+                options: ["314 cm²", "628 cm²", "942 cm²"],
+                correctAnswer: 0
+            },
+            {
+                question: "Jika diameter sebuah lingkaran adalah 14 cm, berapakah jari-jarinya?",
+                options: ["7 cm", "14 cm", "28 cm"],
+                correctAnswer: 0
+            },
+            {
+                question: "Manakah pernyataan berikut yang tidak benar tentang lingkaran?",
+                options: ["Lingkaran memiliki sudut", "Jarak dari pusat ke tepi lingkaran disebut jari-jari", "Diameter adalah dua kali jari-jari"],
+                correctAnswer: 0
+            }
+        ];
+
+        function checkAnswer(selectedOption) {
+            if (selectedOption === questions[currentQuestion].correctAnswer) {
+                score += 20;
+            }
+
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                // Ganti ke soal selanjutnya
+                document.getElementById("question").innerText = questions[currentQuestion].question;
+                const answerOptions = document.getElementsByClassName("answer-option");
+                for (let i = 0; i < answerOptions.length; i++) {
+                    answerOptions[i].innerText = questions[currentQuestion].options[i];
+                }
+                document.getElementById("progress").style.width = ((currentQuestion + 1) / questions.length) * 100 + "%";
+            } else {
+                // Quiz selesai
+                showResult();
+            }
+        }
+
+        function showResult() {
+            const quizContainer = document.querySelector(".quiz-container");
+            quizContainer.innerHTML = `
+                <div class="result-content">
+                    <h2>Quiz Complete</h2>
+                    <p>Kamu benar ${score / 20} soal dari ${questions.length} soal</p>
+                    <h1>SKOR: ${score}</h1>
+                    <div class="result-buttons">
+                        <button class="retry-button" onclick="retryQuiz()">
+                            <img src="../Assets/retry.png" alt="Retry Button">
+                        </button>
+                        <button class="home-button" onclick="goHome()">
+                            <img src="../Assets/Home.png" alt="Home Button">
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function retryQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById("question").innerText = questions[currentQuestion].question;
+            const answerOptions = document.getElementsByClassName("answer-option");
+            for (let i = 0; i < answerOptions.length; i++) {
+                answerOptions[i].innerText = questions[currentQuestion].options[i];
+            }
+            document.getElementById("progress").style.width = "20%";
+        }
+
+        function goHome() {
+            window.location.href = "LandingPage.html";
+        }
+
+        function goToLingkaranOption() {
+            window.location.href = "../Mainpage/Lingkaran/LingkaranOption.html";
+        }
+
+        function goHome() {
+            window.location.href = "../Mainpage/BelahKetupat/BelahKetupatOption.html";
+        }
+    </script>
+</body>
+</html>

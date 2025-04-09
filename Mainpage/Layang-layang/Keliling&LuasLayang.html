@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keliling & Luas Layang - layang</title>
+    <link rel="stylesheet" href="Keliling&LuasLayangStyle.css">
+</head>
+<body>
+    <!-- Background Image -->
+    <div class="background-image"></div>
+
+    <!-- Back Button -->
+    <button class="back-button" onclick="goBackToLayangOption()">
+        <img src="../../Assets/Back.png" alt="Back Button">
+    </button>
+
+    <!-- Title -->
+    <h1 class="title">Layang - layang</h1>
+
+    <!-- Keliling & Luas Container -->
+    <div class="keliling-luas-container">
+        <div class="keliling-luas-tabs">
+            <button class="tab-button active" onclick="showTab('keliling')">Keliling</button>
+            <button class="tab-button" onclick="showTab('luas')">Luas</button>
+        </div>
+        <div class="keliling-luas-content">
+            <div class="layang-layang-diagram">
+                <img src="../../Assets/Layangsifat.png" alt="Persegi Diagram" class="layang-layang-diagram-image">
+            </div>
+            <div class="rumus-keterangan">
+                <div id="keliling-tab" class="tab-content active">
+                    <div class="rumus-box">
+                        <div class="layang-layang-rumus">
+                            <img src="../../Assets/kelilingrumuslayang.png" alt="Persegi Rumus" class="layang-layang-rumus-image">
+                        </div>
+                        <div class="rumus-content-keliling">
+                            <div class="rumus-section">
+                                <h2 class="rumus-title">Rumus</h2>
+                                <p>2a + 2b</p>
+                            </div>
+                            <div class="keterangan-section">
+                                <h2 class="keterangan-title">Keterangan</h2>
+                                <p> a = sisi a <br>
+                                    b = sisi b
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contoh-box">
+                        <div class="layang-layang-contoh">
+                            <img src="../../Assets/kelilingcontohlayang.png" alt="Persegi Contoh" class="layang-layang-contoh-image">
+                        </div>
+                        <div class="rumus-content-contoh">
+                            <div class="rumus-section">
+                                <h2 class="rumus-title">Contoh</h2>
+                                <p>2a + 2b</p>
+                            </div>
+                            <div class="keterangan-section">
+                                <p>(2.4) + (2.8) = 24</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="luas-tab" class="tab-content">
+                    <!-- Add content for the "Luas" tab here -->
+                    <div class="rumus-box">
+                        <div class="layang-layang-rumus">
+                            <img src="../../Assets/luasrumuslayang.png" alt="Persegi Rumus" class="layang-layang-rumus-image">
+                        </div>
+                        <div class="rumus-content-luas">
+                            <div class="rumus-section">
+                                <h2 class="rumus-title">Rumus</h2>
+                                <p>d1 x d2 / 2</p>
+                            </div>
+                            <div class="keterangan-section">
+                                <h2 class="keterangan-title">Keterangan</h2>
+                                <p> d1 = diagonal 1 <br>
+                                    d2 = diagonal 2
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contoh-box">
+                        <div class="layang-layang-contoh">
+                            <img src="../../Assets/luascontohlayang.png" alt="Persegi Contoh" class="layang-layang-contoh-image">
+                        </div>
+                        <div class="rumus-content-contoh-luas">
+                            <div class="rumus-section">
+                                <h2 class="rumus-title">Contoh</h2>
+                                <p>d1 x d2 / 2</p>
+                            </div>
+                            <div class="keterangan-section">
+                                <p>10 x 4 / 2 = 20</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cat Image -->
+    <img src="../../Assets/kucingnengok.png" alt="Cat" class="cat-image">
+
+    <script>
+        function showTab(tabName) {
+            // Get all elements with class="tab-content" and hide them
+            var i, tabcontent;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+
+            // Get all elements with class="tab-button" and remove the class "active"
+            var buttons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("active");
+            }
+
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(tabName + "-tab").classList.add("active");
+            event.currentTarget.classList.add("active");
+        }
+
+        function goBackToLayangOption() {
+            window.location.href = "LayangOption.html";
+        }
+    </script>
+</body>
+</html>

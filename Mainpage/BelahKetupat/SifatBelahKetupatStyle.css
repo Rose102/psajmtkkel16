@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Pixelify+Sans:wght@400..700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../Assets/suboption.png');
+    background-size:contain;
+    z-index: -1;
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 80px; /* Mengurangi lebar menjadi 20px */
+    height: 80px; /* Mengurangi tinggi menjadi 20px */
+    border: none;
+    cursor: pointer;
+    background-color: transparent; /* Mengatur latar belakang menjadi transparan */
+}
+
+.back-button img {
+    max-width: 100%; /* Mengatur maksimal lebar gambar */
+    max-height: 100%; /* Mengatur maksimal tinggi gambar */
+    object-fit: contain; /* Menyimpan rasio aspek gambar */
+}
+
+.title {
+    position: absolute;
+    top: 15px;
+    left: 100px;
+    color: #ffcc00;
+    text-align: center;
+    font-size: 36px;
+    font-family: "Pixelify Sans", serif;
+}
+
+.sifat-belah-ketupat-container {
+    position: absolute;
+    top: 150px;
+    left: 50px;
+    width: 80%;
+    max-width: 900px;
+    background-color: rgba(255, 255, 255, 0.7); /* Mengatur latar belakang menjadi transparan dengan sedikit gelap */
+    border: 4px solid #ffcc00;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.sifat-belah-ketupat-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sifat-list {
+    width: 60%;
+}
+
+.sifat-list p {
+    background-color: #ffcc00;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-family: "Pixelify Sans", serif;
+    color: #333;
+}
+
+.sifat-belah-ketupat-image {
+    height: 30%;
+    width: 30%;
+    max-width: 600px;
+}
+
+.cat-image {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    width: 150px;
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keliling & Luas Persegi Panjang</title>
+    <link rel="stylesheet" href="Keliling&LuasPersegiPanjangStyle.css">
+</head>
+<body>
+    <!-- Background Image -->
+    <div class="background-image"></div>
+
+    <!-- Back Button -->
+    <button class="back-button" onclick="goBackToPersegiPanjangOption()">
+        <img src="../../Assets/Back.png" alt="Back Button">
+    </button>
+
+    <!-- Title -->
+    <h1 class="title">Persegi Panjang</h1>
+
+    <!-- Keliling & Luas Container -->
+    <div class="keliling-luas-container">
+        <div class="keliling-luas-tabs">
+            <button class="tab-button active" onclick="showTab('keliling')">Keliling</button>
+            <button class="tab-button" onclick="showTab('luas')">Luas</button>
+        </div>
+        <div class="keliling-luas-content">
+            <div class="persegi-panjang-diagram">
+                <img src="../../Assets/Persegipanjangfoto.png" alt="Persegi Diagram" class="persegi-panjang-diagram-image">
+            </div>
+            <div class="rumus-keterangan">
+                <div id="keliling-tab" class="tab-content active">
+                    <div class="rumus-box">
+                        <div class="persegi-rumus">
+                            <img src="../../Assets/PXL.png" alt="Persegi Rumus" class="persegi-panjang-rumus-image">
+                        </div>
+                        <div class="rumus-content">
+                            <div class="rumus-section">
+                                <h2 class="rumus-title">Rumus</h2>
+                                <p>2(P + L)</p>
+                            </div>
+                            <div class="keterangan-section">
+                                <h2 class="keterangan-title">Keterangan</h2>
+                                <p>P = Panjang, L = Lebar</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contoh-box">
+                        <div class="persegi-contoh">
+                            <img src="../../Assets/8X20.png" alt="Persegi Contoh" class="persegi-panjang-contoh-image">
+                        </div>
+                        <div class="rumus-content-contoh">
+                            <div class="rumus-section">
+                                <h2 class="rumus-title">Contoh</h2>
+                                <p>2(P + L)</p>
+                            </div>
+                            <div class="keterangan-section">
+                                <p>2 (20 + 8) = 26</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="luas-tab" class="tab-content">
+                    <!-- Add content for the "Luas" tab here -->
+                    <div class="rumus-box">
+                        <div class="persegi-rumus">
+                            <img src="../../Assets/PXL.png" alt="Persegi Rumus" class="persegi-panjang-rumus-image">
+                        </div>
+                        <div class="rumus-content">
+                            <div class="rumus-section">
+                                <h2 class="rumus-title">Rumus</h2>
+                                <p>P × L</p>
+                            </div>
+                            <div class="keterangan-section">
+                                <h2 class="keterangan-title">Keterangan</h2>
+                                <p>S = Sisi panjang/lebar</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contoh-box">
+                        <div class="persegi-contoh">
+                            <img src="../../Assets/8X20.png" alt="Persegi Contoh" class="persegi-panjang-contoh-image">
+                        </div>
+                        <div class="rumus-content-contohluas">
+                            <div class="rumus-section">
+                                <h2 class="rumus-title">Contoh</h2>
+                                <p>P × L</p>
+                            </div>
+                            <div class="keterangan-section">
+                                <p>20 × 8 = 160</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cat Image -->
+    <img src="../../Assets/kucingnengok.png" alt="Cat" class="cat-image">
+
+    <script>
+        function showTab(tabName) {
+            // Get all elements with class="tab-content" and hide them
+            var i, tabcontent;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+
+            // Get all elements with class="tab-button" and remove the class "active"
+            var buttons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("active");
+            }
+
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(tabName + "-tab").classList.add("active");
+            event.currentTarget.classList.add("active");
+        }
+
+        function goBackToPersegiPanjangOption() {
+            window.location.href = "PersegiPanjangOption.html";
+        }   
+    </script>
+</body>
+</html>

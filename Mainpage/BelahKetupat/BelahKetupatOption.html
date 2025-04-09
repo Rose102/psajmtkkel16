@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belah ketupat Options</title>
+    <link rel="stylesheet" href="BelahKetupatOptionStyle.css">
+</head>
+<body>
+    <!-- Background Image -->
+    <div class="background-image"></div>
+
+    <!-- Back Button -->
+    <button class="back-button" onclick="goBackToOption()">
+        <img src="../../Assets/Back.png" alt="Back Button">
+    </button>
+
+    <!-- Title -->
+    <h1 class="title">Belah Ketupat</h1>
+
+    <!-- Persegi Images -->
+    <div class="belah-ketupat-images">
+        <img src="../../Assets/sipatbelahketupat.png" alt="Belah 1" class="belah-image" onclick="redirectToSifatBelahKetupat()">
+        <img src="../../Assets/KLbelahketupat.png" alt="Belah 2" class="belah-image" onclick="redirectToKelilingLuasBelah()">
+        <img src="../../Assets/Quizbelahketupat.png" alt="Belah 3" class="belah-image" onclick="redirectToQuizBelahKetupat()">
+    </div>
+
+    <!-- Cat Image -->
+    <img src="../../Assets/kucingnengok.png" alt="Cat" class="cat-image">
+
+    <script>
+        function goBackToOption() {
+                window.location.href = "../../Homepage/Option.html";
+        }
+
+        function redirectToSifatBelahKetupat() {
+            window.location.href = "SifatBelahKetupat.html";
+        }
+
+        function redirectToKelilingLuasBelah() {
+            window.location.href = "Keliling&LuasBelah.html";
+        }
+
+        function redirectToQuizBelahKetupat() {
+            window.location.href = "../QuizBelahKetupat.html";
+        }
+    </script>
+
+</body>
+</html>

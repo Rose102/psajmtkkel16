@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Belah Ketupat</title>
+    <link rel="stylesheet" href="QuizStyle.css">
+</head>
+<body>
+    <!-- Background Image -->
+    <div class="background-image"></div>
+    <!-- Back Button -->
+    <button class="back-button" onclick="goToBelahKetupatOption()">
+        <img src="../Assets/Back.png" alt="Back Button">
+    </button>
+    <!-- Title -->
+    <h1 class="title">Belah Ketupat</h1>
+    <!-- Quiz Container -->
+    <div class="quiz-container">
+        <div class="quiz-content">
+            <div class="question-box">
+                <p id="question">Manakah di antara pernyataan berikut yang merupakan sifat dari belah ketupat?</p>
+            </div>
+            <div class="answer-options">
+                <button class="answer-option" onclick="checkAnswer(0)">Semua sisinya sama panjang.</button>
+                <button class="answer-option" onclick="checkAnswer(1)">Hanya dua sisinya yang sama panjang</button>
+                <button class="answer-option" onclick="checkAnswer(2)">Memiliki satu sudut siku-siku</button>
+            </div>
+            <div class="progress-bar">
+                <div id="progress" style="width: 20%; "></div>
+            </div>
+        </div>
+    </div>
+    <!-- Cat Image -->
+    <img src="../Assets/kucingnengok.png" alt="Cat" class="cat-image">
+    <script>
+        let currentQuestion = 0;
+        let score = 0;
+        const questions = [
+            {
+                question: "Manakah di antara pernyataan berikut yang merupakan sifat dari belah ketupat?",
+                options: ["Semua sisinya sama panjang", "Hanya dua sisinya yang sama panjang", "Memiliki satu sudut siku-siku"],
+                correctAnswer: 0
+            },
+            {
+                question: "Sebuah belah ketupat memiliki diagonal 6 cm dan 8 cm. Berapakah luasnya?",
+                options: ["24 cm²", "36 cm²", "48 cm²"],
+                correctAnswer: 0
+            },
+            {
+                question: "Sebuah belah ketupat memiliki panjang sisi 5 cm. Berapakah kelilingnya?",
+                options: ["10 cm", "15 cm", "20 cm"],
+                correctAnswer: 2
+            },
+            {
+                question: "Manakah pernyataan berikut yang tidak benar tentang belah ketupat?",
+                options: ["Semua sisinya sama panjang", "Diagonalnya selalu sama panjang", "Sudut-sudut yang berhadapan sama besar"],
+                correctAnswer: 1
+            },
+            {
+                question: "Sebuah belah ketupat memiliki diagonal 10 cm dan 12 cm. Berapakah luasnya?",
+                options: ["40 cm²", "60 cm²", "80 cm²"],
+                correctAnswer: 1
+            }
+        ];
+
+        // Function to check the answer
+        function checkAnswer(selectedOption) {
+            if (selectedOption === questions[currentQuestion].correctAnswer) {
+                score += 20;
+            }
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                // Ganti ke soal selanjutnya
+                document.getElementById("question").innerText = questions[currentQuestion].question;
+                const answerOptions = document.getElementsByClassName("answer-option");
+                for (let i = 0; i < answerOptions.length; i++) {
+                    answerOptions[i].innerText = questions[currentQuestion].options[i];
+                }
+                document.getElementById("progress").style.width = ((currentQuestion + 1) / questions.length) * 100 + "%";
+            } else {
+                // Quiz selesai
+                showResult();
+            }
+        }
+
+        // Function to show the result
+        function showResult() {
+            const quizContainer = document.querySelector(".quiz-container");
+            quizContainer.innerHTML = `
+                <div class="result-content">
+                    <h2>Quiz Complete</h2>
+                    <p>Kamu benar ${score / 20} soal dari ${questions.length} soal</p>
+                    <h1>SKOR: ${score}</h1>
+                    <div class="result-buttons">
+                        <button class="retry-button" onclick="retryQuiz()">
+                            <img src="../Assets/retry.png" alt="Retry Button">
+                        </button>
+                        <button class="home-button" onclick="goHome()">
+                            <img src="../Assets/Home.png" alt="Home Button">
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Function to retry the quiz (refresh the page)
+        function retryQuiz() {
+            window.location.reload(); // Refresh the page to restart the quiz
+        }
+
+        // Function to go to the homepage
+        function goHome() {
+            window.location.href = "../Homepage/Option.html";
+        }
+
+        // Function to go back to the Belah Ketupat option page
+        function goToBelahKetupatOption() {
+            window.location.href = "../Mainpage/BelahKetupat/BelahKetupatOption.html";
+        }
+    </script>
+</body>
+</html>

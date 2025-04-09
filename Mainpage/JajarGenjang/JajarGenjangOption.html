@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JajarGenjang Options</title>
+    <link rel="stylesheet" href="JajarGenjangStyle.css">
+</head>
+<body>
+    <!-- Background Image -->
+    <div class="background-image"></div>
+
+     <!-- Back Button -->
+    <button class="back-button" onclick="goBackToOption()">
+        <img src="../../Assets/Back.png" alt="Back Button">
+    </button>
+
+    <!-- Title -->
+    <h1 class="title">Jajar Genjang</h1>
+
+    <!-- Persegi Images -->
+    <div class="jajar-genjang-images">
+        <img src="../../Assets/Sifatjajar.png" alt="Jajar 1" class="jajar-image"  onclick="redirectToSifatJajarGenjang()">
+        <img src="../../Assets/KLjajar.png" alt="Jajar 2" class="jajar-image"  onclick="redirectToKelilingLuasJajarGenjang()">
+        <img src="../../Assets/quizjajar.png" alt="Jajar 3" class="jajar-image" onclick="redirectToQuizJajarGenjang()">
+    </div>
+
+    <!-- Cat Image -->
+    <img src="../../Assets/kucingnengok.png" alt="Cat" class="cat-image">
+
+    <script>
+        function goBackToOption() {
+            window.location.href = "../../Homepage/Option.html";
+        }
+
+        function redirectToSifatJajarGenjang() {
+            window.location.href = "SifatJajarGenjang.html";
+        }
+
+        function redirectToKelilingLuasJajarGenjang() {
+            window.location.href = "Keliling&LuasJajarGenjang.html";
+        }
+
+        function redirectToQuizJajarGenjang() {
+            window.location.href = "../QuizJajarGenjang.html";
+        }
+    </script>
+
+</body>
+</html>

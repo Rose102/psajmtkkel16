@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persegi Options</title>
+    <link rel="stylesheet" href="PersegiOptionStyle.css">
+</head>
+<body>
+    <!-- Background Image -->
+    <div class="background-image"></div>
+
+    <!-- Back Button -->
+    <button class="back-button" onclick="goBackToOption()">
+        <img src="../../Assets/Back.png" alt="Back Button">
+    </button>
+
+    <!-- Title -->
+    <h1 class="title">Persegi</h1>
+
+    <!-- Persegi Images -->
+    <div class="persegi-images">
+        <img src="../../Assets/SIFATPERSEGI.png" alt="Persegi 1" class="persegi-image" onclick="redirectToSifatPersegi()">
+        <img src="../../Assets/K&L persegi.png" alt="Persegi 2" class="persegi-image" onclick="redirectToKelilingLuasPersegi()">
+        <img src="../../Assets/quizpersegi.png" alt="Persegi 3" class="persegi-image" onclick="redirectToQuizPersegi()">
+    </div>
+
+    <!-- Cat Image -->
+    <img src="../../Assets/kucingnengok.png" alt="Cat" class="cat-image">
+
+    <script>
+        function goBackToOption() {
+            window.location.href = "../../Homepage/Option.html";
+        }
+
+        function redirectToSifatPersegi() {
+            window.location.href = "SifatPersegi.html";
+        }
+
+        function redirectToKelilingLuasPersegi() {
+            window.location.href = "Keliling&LuasPersegi.html";
+        }
+
+        function redirectToQuizPersegi() {
+            window.location.href = "../QuizPersegi.html";
+        }
+    </script>
+
+</body>
+</html>

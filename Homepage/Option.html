@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Options</title>
+    <link rel="stylesheet" href="OptionStyle.css">
+</head>
+<body>
+    <!-- Background Image -->
+    <div class="background-image"></div>
+
+    <!-- Back Button -->
+    <button class="back-button" onclick="goBackToLandingPage()">
+        <img src="../Assets/Back.png" alt="Back Button">
+    </button>
+
+    <!-- Cat Image -->
+    <img src="../Assets/kucingoption.png" alt="Cat" class="cat-image">
+
+    <!-- Question Box -->
+    <div class="question-box">Mau belajar apa hari ini?</div>
+
+    <!-- Shape Buttons -->
+    <div class="shape-buttons-top">
+        <button class="shape-button persegi" onclick="redirectToPersegiOption()">
+            <img src="../Assets/Persegi.png" alt="Square">
+        </button>
+        <button class="shape-button persegipanjang" onclick="redirectToPersegiPanjangOption()">
+            <img src="../Assets/PersegiPanjang.png" alt="Rectangle">
+        </button>
+        <button class="shape-button trapesium" onclick="redirectToTrapesiumOption()">
+            <img src="../Assets/Trapesium.png" alt="Trapezoid">
+        </button>
+    </div>
+    
+    <div class="shape-buttons-bottom">
+        <button class="shape-button jajargenjang" onclick="redirectToJajarGenjangOption()">
+            <img src="../Assets/JajarGenjang.png" alt="Parallelogram">
+        </button>
+        <button class="shape-button lingkaran" onclick="redirectToLingkaranOption()">
+            <img src="../Assets/Lingkaran.png" alt="Circle">
+        </button>
+        <button class="shape-button belahketupat" onclick="redirectToBelahKetupatOption()">
+            <img src="../Assets/BelahKetupat.png" alt="Rhombus">
+        </button>
+        <button class="shape-button layang" onclick="redirectToLayangOption()">
+            <img src="../Assets/Layang-layang.png" alt="Kite">
+        </button>
+    </div>
+
+    <script>
+        function goBackToLandingPage() {
+            window.location.href = "LandingPage.html";
+        }
+
+        function redirectToPersegiOption() {
+            window.location.href = "../Mainpage/Persegi/PersegiOption.html";
+        }
+
+        function redirectToPersegiPanjangOption() {
+            window.location.href = "../Mainpage/PersegiPanjang/PersegiPanjangOption.html";
+        }
+
+        function redirectToTrapesiumOption() {
+            window.location.href = "../Mainpage/Trapesium/TrapesiumOption.html";
+        }
+
+        function redirectToJajarGenjangOption() {
+            window.location.href = "../Mainpage/JajarGenjang/JajarGenjangOption.html";
+        }
+
+        function redirectToLingkaranOption() {
+            window.location.href = "../Mainpage/Lingkaran/LingkaranOption.html";
+        }
+
+        function redirectToBelahKetupatOption() {
+            window.location.href = "../Mainpage/BelahKetupat/BelahKetupatOption.html";
+        }
+
+        function redirectToLayangOption() {
+            window.location.href = "../Mainpage/Layang-layang/LayangOption.html";
+        }
+
+        // Memeriksa status musik saat halaman dimuat
+        window.onload = function() {
+            const audio = document.createElement("audio");
+            audio.id = "background-audio";
+            audio.loop = true;
+            audio.src = "../Assets/background-music.mp3";
+
+            const isMusicPlaying = localStorage.getItem("isMusicPlaying");
+
+            if (isMusicPlaying === "true") {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+
+            document.body.appendChild(audio);
+        };
+
+        function toggleSound() {
+            const audio = document.getElementById("background-audio");
+            const soundIcon = document.getElementById("sound-icon");
+
+            if (audio.paused) {
+                audio.play();
+                soundIcon.src = "../Assets/Sound.png"; // Icon suara aktif
+                localStorage.setItem("isMusicPlaying", "true");
+            } else {
+                audio.pause();
+                soundIcon.src = "../Assets/Mute.png"; // Icon suara dinonaktifkan
+                localStorage.setItem("isMusicPlaying", "false");
+            }
+        }
+    </script>
+</body>
+</html>

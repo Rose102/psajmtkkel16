@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Jajar Genjang</title>
+    <link rel="stylesheet" href="QuizStyle.css">
+</head>
+<body>
+    <!-- Background Image -->
+    <div class="background-image"></div>
+
+    <!-- Back Button -->
+    <button class="back-button" onclick="goToJajarGenjangOption()">
+        <img src="../Assets/Back.png" alt="Back Button">
+    </button>
+
+    <!-- Title -->
+    <h1 class="title">Jajar Genjang</h1>
+
+    <!-- Quiz Container -->
+    <div class="quiz-container">
+        <div class="quiz-content">
+            <div class="question-box">
+                <p id="question">Manakah di antara pernyataan berikut yang merupakan sifat dari jajargenjang?</p>
+            </div>
+            <div class="answer-options">
+                <button class="answer-option" onclick="checkAnswer(0)">Semua sisinya sama panjang.</button>
+                <button class="answer-option" onclick="checkAnswer(1)">Sisi-sisi yang berhadapan sejajar dan sama panjang.</button>
+                <button class="answer-option" onclick="checkAnswer(2)">Memiliki dua pasang sudut siku-siku.</button>
+            </div>
+            <div class="progress-bar">
+                <div id="progress" style="width: 20%;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cat Image -->
+    <img src="../Assets/kucingnengok.png" alt="Cat" class="cat-image">
+
+    <script>
+        let currentQuestion = 0;
+        let score = 0;
+        const questions = [
+            {
+                question: "Manakah di antara pernyataan berikut yang merupakan sifat dari jajargenjang?",
+                options: ["Semua sisinya sama panjang", "Sisi-sisi yang berhadapan sejajar dan sama panjang", "Memiliki dua pasang sudut siku-siku"],
+                correctAnswer: 1
+            },
+            {
+                question: "Sebuah jajargenjang memiliki alas 8 cm dan tinggi 5 cm. Berapakah luasnya?",
+                options: ["30 cm²", "40 cm²", "50 cm²"],
+                correctAnswer: 1
+            },
+            {
+                question: "Sebuah jajargenjang memiliki panjang sisi sejajar 6 cm dan sisi miring 4 cm. Berapakah kelilingnya?",
+                options: ["10 cm", "20 cm", "30 cm"],
+                correctAnswer: 1
+            },
+            {
+                question: "Sebuah jajargenjang memiliki luas 36 cm² dan alas 9 cm. Berapakah tingginya?",
+                options: ["3 cm", "4 cm", "5 cm"],
+                correctAnswer: 1
+            },
+            {
+                question: "Manakah pernyataan berikut yang tidak benar tentang jajargenjang?",
+                options: ["Sisi-sisi yang berhadapan sejajar", "Sudut-sudut yang berhadapan sama besar", "Semua sudutnya selalu siku-siku"],
+                correctAnswer: 2
+            }
+        ];
+
+        function checkAnswer(selectedOption) {
+            if (selectedOption === questions[currentQuestion].correctAnswer) {
+                score += 20;
+            }
+
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                // Ganti ke soal selanjutnya
+                document.getElementById("question").innerText = questions[currentQuestion].question;
+                const answerOptions = document.getElementsByClassName("answer-option");
+                for (let i = 0; i < answerOptions.length; i++) {
+                    answerOptions[i].innerText = questions[currentQuestion].options[i];
+                }
+                document.getElementById("progress").style.width = ((currentQuestion + 1) / questions.length) * 100 + "%";
+            } else {
+                // Quiz selesai
+                showResult();
+            }
+        }
+
+        function showResult() {
+            const quizContainer = document.querySelector(".quiz-container");
+            quizContainer.innerHTML = `
+                <div class="result-content">
+                    <h2>Quiz Complete</h2>
+                    <p>Kamu benar ${score / 20} soal dari ${questions.length} soal</p>
+                    <h1>SKOR: ${score}</h1>
+                    <div class="result-buttons">
+                        <button class="retry-button" onclick="retryQuiz()">
+                            <img src="../Assets/retry.png" alt="Retry Button">
+                        </button>
+                        <button class="home-button" onclick="goHome()">
+                            <img src="../Assets/Home.png" alt="Home Button">
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function retryQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById("question").innerText = questions[currentQuestion].question;
+            const answerOptions = document.getElementsByClassName("answer-option");
+            for (let i = 0; i < answerOptions.length; i++) {
+                answerOptions[i].innerText = questions[currentQuestion].options[i];
+            }
+            document.getElementById("progress").style.width = "20%";
+        }
+
+        function goHome() {
+            window.location.href = "LandingPage.html";
+        }
+
+        function goToJajarGenjangOption() {
+            window.location.href = "../Mainpage/JajarGenjang/JajarGenjangOption.html";
+        }
+
+        function goHome() {
+            window.location.href = "../Mainpage/BelahKetupat/BelahKetupatOption.html";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Pixelify+Sans:wght@400..700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: "Pixelify Sans", serif;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../Assets/suboption.png');
+    background-size: contain;
+    z-index: -1;
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 80px; /* Mengurangi lebar menjadi 20px */
+    height: 80px; /* Mengurangi tinggi menjadi 20px */
+    border: none;
+    cursor: pointer;
+    background-color: transparent; /* Mengatur latar belakang menjadi transparan */
+}
+
+.back-button img {
+    max-width: 100%; /* Mengatur maksimal lebar gambar */
+    max-height: 100%; /* Mengatur maksimal tinggi gambar */
+    object-fit: contain; /* Menyimpan rasio aspek gambar */
+}
+
+
+.title {
+    position: absolute;
+    top: 15px;
+    left: 100px;
+    color: #ffcc00;
+    text-align: center;
+    font-size: 36px;
+}
+
+.keliling-luas-container {
+    position: absolute;
+    top: 110px;
+    left: 260px;
+    width: 60%; /* Mengurangi lebar menjadi 60% */
+    max-width: 700px; /* Mengurangi batasan maksimum lebar menjadi 700px */
+    height: 400px; /* Mengatur tinggi menjadi 400px */
+    background-color: white;
+    border: 10px solid #ffcc00;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.keliling-luas-tabs {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.tab-button.active {
+    font-family: "Pixelify Sans", serif;
+    background-color: #ff9900;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.keliling-luas-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.belah-ketupat-diagram {
+    width: 40%;
+}
+
+.belah-ketupat-diagram-image {
+    margin-top: 20px;
+    margin-left: 10px;
+    height: 80%;
+    width: 100%;
+}
+
+.rumus-keterangan {
+    width: 55%;
+}
+
+.rumus-title, .keterangan-title, .contoh-title {
+    color: #ffcc00;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.rumus-box, .contoh-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #ffcc00;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    height: 150px;
+}
+
+.rumus-content-contoh {
+    position: relative;
+    right: 90px; /* Mengatur posisi dari sisi kiri */
+}
+
+.rumus-content-luas {
+    position: relative;
+    right: 35px; /* Mengatur posisi dari sisi kiri */
+}
+
+.rumus-content-contoh-keliling{
+    position: relative;
+    right: 85px;
+}
+
+.rumus-content-luas {
+    margin-top: -10px; /* Mengurangi jarak dari sisi atas */
+}
+
+.belah-ketupat-rumus, .belah-ketupat-contoh {
+    width: 40%;
+}
+
+.belah-ketupat-rumus-image, .belah-ketupat-contoh-image {
+    margin-top: 20px;
+    margin-left: 15px;
+    height: 90%;
+    width: 90%;
+}
+
+.cat-image {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    width: 150px;
+}

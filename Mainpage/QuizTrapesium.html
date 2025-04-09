@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Persegi</title>
+    <link rel="stylesheet" href="QuizStyle.css">
+</head>
+<body>
+    <!-- Background Image -->
+    <div class="background-image"></div>
+
+    <!-- Back Button -->
+    <button class="back-button" onclick="goToTrapesiumOption()">
+        <img src="../Assets/Back.png" alt="Back Button">
+    </button>
+
+    <!-- Title -->
+    <h1 class="title">Trapesium</h1>
+
+    <!-- Quiz Container -->
+    <div class="quiz-container">
+        <div class="quiz-content">
+            <div class="question-box">
+                <p id="question">Manakah di antara pernyataan berikut yang merupakan sifat dari trapesium?</p>
+            </div>
+            <div class="answer-options">
+                <button class="answer-option" onclick="checkAnswer(0)">Memiliki dua pasang sisi sejajar.</button>
+                <button class="answer-option" onclick="checkAnswer(1)">Memiliki sepasang sisi sejajar.</button>
+                <button class="answer-option" onclick="checkAnswer(2)">Semua sisinya sama panjang.</button>
+            </div>
+            <div class="progress-bar">
+                <div id="progress" style="width: 20%;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cat Image -->
+    <img src="../Assets/kucingnengok.png" alt="Cat" class="cat-image">
+
+    <script>
+        let currentQuestion = 0;
+        let score = 0;
+        const questions = [
+            {
+                question: "Manakah di antara pernyataan berikut yang merupakan sifat dari trapesium?",
+                options: ["Memiliki dua pasang sisi sejajar.", "Memiliki sepasang sisi sejajar.", "Semua sisinya sama panjang."],
+                correctAnswer: 1
+            },
+            {
+                question: "Sebuah trapesium memiliki panjang sisi sejajar 6 cm dan 10 cm, serta tinggi 4 cm. Berapakah luas trapesium tersebut?",
+                options: ["32 cm²", "48 cm²", "64 cm²"],
+                correctAnswer: 0
+            },
+            {
+                question: "Sebuah trapesium memiliki panjang sisi-sisinya sebagai berikut: 5 cm, 7 cm, 8 cm, dan 10 cm. Berapakah keliling trapesium tersebut?",
+                options: ["30 cm", "35 cm", "40 cm"],
+                correctAnswer: 0
+            },
+            {
+                question: "Trapesium yang memiliki satu sudut siku-siku disebut...",
+                options: ["Trapesium sembarang", "Trapesium siku-siku", "Trapesium sama kaki"],
+                correctAnswer: 1
+            },
+            {
+                question: "Trapesium yang kedua kakinya sama panjang disebut...",
+                options: ["Trapesium sembarang", "Trapesium sama kaki", "Trapesium siku-siku"],
+                correctAnswer: 1
+            }
+        ];
+
+        function checkAnswer(selectedOption) {
+            if (selectedOption === questions[currentQuestion].correctAnswer) {
+                score += 20;
+            }
+
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                // Ganti ke soal selanjutnya
+                document.getElementById("question").innerText = questions[currentQuestion].question;
+                const answerOptions = document.getElementsByClassName("answer-option");
+                for (let i = 0; i < answerOptions.length; i++) {
+                    answerOptions[i].innerText = questions[currentQuestion].options[i];
+                }
+                document.getElementById("progress").style.width = ((currentQuestion + 1) / questions.length) * 100 + "%";
+            } else {
+                // Quiz selesai
+                showResult();
+            }
+        }
+
+        function showResult() {
+            const quizContainer = document.querySelector(".quiz-container");
+            quizContainer.innerHTML = `
+                <div class="result-content">
+                    <h2>Quiz Complete</h2>
+                    <p>Kamu benar ${score / 20} soal dari ${questions.length} soal</p>
+                    <h1>SKOR: ${score}</h1>
+                    <div class="result-buttons">
+                        <button class="retry-button" onclick="retryQuiz()">
+                            <img src="../Assets/retry.png" alt="Retry Button">
+                        </button>
+                        <button class="home-button" onclick="goHome()">
+                            <img src="../Assets/Home.png" alt="Home Button">
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function retryQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById("question").innerText = questions[currentQuestion].question;
+            const answerOptions = document.getElementsByClassName("answer-option");
+            for (let i = 0; i < answerOptions.length; i++) {
+                answerOptions[i].innerText = questions[currentQuestion].options[i];
+            }
+            document.getElementById("progress").style.width = "20%";
+        }
+
+        function goHome() {
+            window.location.href = "LandingPage.html";
+        }
+
+        function goToTrapesiumOption() {
+            window.location.href = "../Mainpage/Trapesium/TrapesiumOption.html";
+        }
+
+        function goHome() {
+            window.location.href = "../Mainpage/BelahKetupat/BelahKetupatOption.html";
+        }   
+    </script>
+</body>
+</html>

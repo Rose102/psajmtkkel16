@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area and Perimeter Interactive</title>
+    <link rel="stylesheet" href="LandingPageStyle.css">
+</head>
+<body>
+    <!-- Background Image -->
+    <div class="background-image"></div>
+    <div class="PojokKanan">
+        <!-- Information Button -->
+        <button class="info-button">
+            <img src="../Assets/Info.png" alt="Info Button">
+        </button>
+        <!-- Sound Button -->
+        <button class="sound-button" onclick="toggleSound()">
+            <img id="sound-icon" src="../Assets/Sound.png" alt="Sound Button">
+        </button>
+    </div>
+    <!-- Title -->
+    <h1 class="title">Area and<br>Perimeter Interactive</h1>
+    <!-- Start Button -->
+    <button class="start-button" onclick="redirectToOption()">Mulai</button>
+    <script>
+        function redirectToOption() {
+            window.location.href = "Option.html";
+        }
+
+        function toggleSound() {
+            const audio = document.getElementById("background-audio");
+            const soundIcon = document.getElementById("sound-icon");
+
+            if (audio.paused) {
+                audio.play();
+                soundIcon.src = "../Assets/Sound.png"; // Icon suara aktif
+            } else {
+                audio.pause();
+                soundIcon.src = "../Assets/Mute.png"; // Icon suara dinonaktifkan
+            }
+        }
+    </script>
+    <!-- Cat Image -->
+    <img src="../Assets/KUCINGLANDING.png" alt="Cat" class="cat-image">
+    <!-- Audio Element -->
+    <audio id="background-audio" autoplay loop>
+        <source src="../Assets/background-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</body>
+</html>
